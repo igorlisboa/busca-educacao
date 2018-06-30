@@ -1,43 +1,100 @@
-<div class="row">
-  <div class="col-xxxl-3 col-md-6" *ngFor="let statusCard of statusCards">
-    <ngx-status-card [title]="statusCard.title"
-                     [type]="statusCard.type">
-      <i [ngClass]="statusCard.iconClass"></i>
-    </ngx-status-card>
-  </div>
-</div>
+<h1 class="grid-h" style="text-align: center"> </h1>
 
 <div class="row">
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-    <ngx-temperature></ngx-temperature>
-  </div>
+  <div class="col-md-12">
+    <nb-card>
+      <!--<nb-card-header>-->
+      <!--</nb-card-header>-->
+      <nb-card-body>
+          <h4>Seu endereço</h4>
+          <div class="input-group">
+            <input type="text"
+                   placeholder="CEP"
+                   class="form-control"
+                   maxlength="9"
+                   (input)="pesquisaEndereco()"
+                    [(ngModel)]="cepModel"
+            >
+          </div>
+          <div class="row">
+            <div class="input-group input-group-fill-only col-md-12">
+              <input type="text"
+                     id="rua"
+                     placeholder="Rua"
+                     class="form-control"
+                     [(ngModel)]="rua"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-group input-group-fill-only col-md-4">
+              <input type="text"
+                     id="bairro"
+                     [(ngModel)]="bairro"
+                     placeholder="Bairro"
+                     class="form-control"
+              />
+            </div>
 
-  <div class="col-xxxl-9 col-xxl-8 col-lg-7 col-md-6">
-    <ngx-electricity></ngx-electricity>
-  </div>
-</div>
+            <div class="input-group input-group-fill-only col-md-4">
+              <input type="text"
+                     id="cidade"
+                     [(ngModel)]="cidade"
+                     placeholder="Cidade"
+                     class="form-control" />
+            </div>
 
-<div class="row">
-  <div class="col-xxxl-9 col-xl-12">
-    <ngx-rooms></ngx-rooms>
-  </div>
+            <div class="input-group input-group-fill-only col-md-4">
+              <input type="text"
+                     id="uf"
+                     [(ngModel)]="uf"
+                     placeholder="UF"
+                     class="form-control"
+              />
+            </div>
+          </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-lg-7 col-md-6">
-    <ngx-contacts></ngx-contacts>
-  </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label>Idade:</label>
+            <div class="input-group ">
+              <input type="text"
+                     id="idade"
+                     [(ngModel)]="idade"
+                     placeholder="Qual a idade de seu filho?"
+                     class="form-control"
+              />
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label>Nivel/Serie:</label>
+            <select class="form-control">
+              <option></option>
+              <option>Jardim de infância</option>
+              <option>Ensino especial</option>
+              <option>1º ano - Ensino Fundamental</option>
+              <option>2º ano - Ensino Fundamental</option>
+              <option>3º ano - Ensino Fundamental</option>
+              <option>4º ano - Ensino Fundamental</option>
+              <option>5º ano - Ensino Fundamental</option>
+              <option>6º ano - Ensino Fundamental</option>
+              <option>7º ano - Ensino Fundamental</option>
+              <option>8º ano - Ensino Fundamental</option>
+              <option>9º ano - Ensino Fundamental</option>
+              <option>1º ano - Ensino Médio</option>
+              <option>2º ano - Ensino Médio</option>
+              <option>3º ano - Ensino Médio</option>
+            </select>
+          </div>
+        </div>
 
-  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
-    <ngx-solar [chartValue]="72"></ngx-solar>
-
-    <ngx-kitten></ngx-kitten>
-  </div>
-
-  <div class="col-xxxl-3 col-xxl-4 col-md-5">
-    <ngx-traffic></ngx-traffic>
-    <ngx-weather></ngx-weather>
-  </div>
-
-  <div class="col-xxxl-6 col-xxl-12 col-md-7">
-    <ngx-security-cameras></ngx-security-cameras>
+      </nb-card-body>
+      <nb-card-footer>
+        <div class="container-btn">
+          <button class="btn btn-hero-primary btn-demo float-right" (click)="iniciaQuestionario()">Continuar >></button>
+        </div>
+      </nb-card-footer>
+    </nb-card>
   </div>
 </div>
